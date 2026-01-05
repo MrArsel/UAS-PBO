@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Peminjaman | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Peminjaman.id</div>
+    <ul class="nav-menu">
+        <li class="user-info">
+            {{ request.user.username }}
+        </li>
+        <li>
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Keluar</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+<section class="content form-page">
+
+        <h1>Edit Peminjaman</h1>
+
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+            <form method="POST" class="form-box">
+
+            {% csrf_token %}
+
+            <label>Nama Peminjam</label>
+            <input type="text" name="nama_peminjam" value="{{ peminjaman.nama_peminjam }}" required>
+
+            <label>Barang</label>
+            <select name="barang" required>
+                {% for b in barang %}
+                    <option value="{{ b.id }}"
+                        {% if b.id == peminjaman.barang.id %}selected{% endif %}>
+                        {{ b.nama_barang }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Jumlah</label>
+            <input type="number" name="jumlah" value="{{ peminjaman.jumlah }}" required>
+
+            <label>Tanggal Pinjam</label>
+            <input type="date" name="tanggal_pinjam" value="{{ peminjaman.tanggal_pinjam }}" required>
+
+            <button type="submit" class="btn-save" style="margin-top:15px;">
+                Simpan Perubahan
+            </button>
+        </form>
+        <a href="/peminjaman/" class="btn-back form-back">← Kembali</a>
+</section>
+
+<footer class="footer">
+    <p>© 2026 Primakara University</p>
+</footer>
+
+</body>
+</html>

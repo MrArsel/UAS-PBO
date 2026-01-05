@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Inout Peminjaman | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Peminjaman.id</div>
+    <ul class="nav-menu">
+        <li class="user-info">
+            {{ request.user.username }}
+        </li>
+        <li>
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Keluar</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<!-- CONTENT -->
+<section class="content form-page">
+    <h1>Input Peminjaman</h1>
+    <p>Masukkan data peminjaman baru</p>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" class="form-box" style="width : 100%;">
+
+        {% csrf_token %}
+
+        <label>Nama Peminjam</label>
+        <input type="text" name="nama_peminjam" required>
+
+        <label>Barang</label>
+        <select name="barang" required>
+            {% for b in barang %}
+            <option value="{{ b.id }}">
+                {{ b.nama_barang }} (Stok: {{ b.stok }})
+            </option>
+            {% endfor %}
+        </select>
+
+        <label>Jumlah</label>
+        <input type="number" name="jumlah" min="1" required>
+
+        <label>Tanggal Pinjam</label>
+        <input type="date" name="tanggal_pinjam" required>
+
+        <br><br>
+
+        <button type="submit" class="btn-save">Simpan</button>
+       
+    </form>
+     <a href="/peminjaman/" class="btn-back form-back">← Kembali</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Primakara University</p>
+</footer>
+
+</body>
+</html>

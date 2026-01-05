@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+        <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Peminjaman.id</div>
+        <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/tentang/">Tentang</a></li>
+        </ul>
+    </nav>
+   <div class="dalam">
+         <div class="container swiper">
+            <div class="hero-content">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper">
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/krisna.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Krisna Yuda</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/rai.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Raiyuda</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/yuma.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Yuma Khesyawa</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/krisna.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Krisna Yuda</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/rai.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Raiyuda</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+
+                        <div class="card-item swiper-slide">
+                            <img src="{% static 'img/yuma.jpeg' %}" class="user-image" alt="Krisna Yuda">
+                            <h2 class="user-name">Yuma Khesyawa</h2>
+                            <p class="user-profession">Software Development</p>
+                            <button class="message-button">Message</button>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Primakara University</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/card.js' %}"></script>
+    <script>const swiper = new Swiper('.slider-wrapper', {
+            loop: true,
+            grabCursor: true,
+            spaceBetween: 30,
+        
+            // If we need pagination
+            pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true
+            },
+        
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+
+                //responsive breakpoints
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    }
+                }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Beranda | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Peminjaman.id</div>
+        <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/tentang/">Tentang</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sistem Peminjaman Barang</h1>
+            <p>
+                Aplikasi untuk mengelola peminjaman barang secara
+                mudah, cepat, dan terstruktur.
+            </p>
+            <a href="{% url 'login' %}"class="btn-primary">Masuk ke Sistem</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Primakara University</p>
+    </footer>
+
+</body>
+</html>

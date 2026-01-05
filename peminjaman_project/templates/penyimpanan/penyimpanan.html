@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Penyimpanan | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Peminjaman.id</div>
+    <ul class="nav-menu">
+        <li class="user-info">
+            {{ request.user.username }}
+        </li>
+        <li>
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Keluar</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<!-- Content -->
+<section class="content">
+
+    <div class="content-header header-flex">
+        <div>
+            <h1>Data Penyimpanan</h1>
+            <p>Daftar lokasi dan jumlah barang yang disimpan</p>
+        </div>
+        <a href="/penyimpanan/tambah/" class="btn-add">Input Penyimpanan</a>
+    </div>
+
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Barang</th>
+                    <th>Lokasi</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in data %}
+                <tr>
+                    <td align="center">{{ forloop.counter }}</td>
+                    <td>{{ p.barang.nama_barang }}</td>
+                    <td>{{ p.lokasi }}</td>
+                    <td align="center">{{ p.jumlah }}</td>
+                    <td align="center">{{ p.tanggal_simpan|date:"d M Y" }}</td>
+                    <td class="aksi">
+                        <a href="/penyimpanan/edit/{{ p.id }}/" class="btn-edit">Edit</a>
+                        <form action="/penyimpanan/hapus/{{ p.id }}/" method="POST" class="form-delete">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-delete">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+    <a href="/home/" class="btn-back">← Kembali ke Dashboard</a>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Primakara University</p>
+</footer>
+
+</body>
+</html>

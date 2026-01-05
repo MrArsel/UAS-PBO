@@ -1,0 +1,164 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 15px 40px;
+}
+.logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-menu li a:hover {
+    color: #38bdf8;
+}
+.dalam{
+    flex: 1;
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(../img/backuas.gif);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #1e293b;
+    color: #cbd5f5;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+
+.slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 70px 55px;
+}
+
+.card-list .card-item{
+    color: #fff;
+    user-select: none;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card-list .card-item .user-image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 3px solid #fff;
+    padding: 4px;
+    transition: 0.5s ease;
+}
+
+.card-list .card-item .user-image:hover{
+    border-radius: 10%;
+    border: 3px solid #fff;
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.317);
+    width: 180px;
+    height: 180px;
+}
+
+.card-list .card-item .user-profession{
+    font-size: 1.15rem;
+    color: #e3e3e3;
+    font-weight: 500;
+    margin: 14px 0 40px;
+    transition: 0.5s ease;
+}
+
+.card-list .card-item h2{
+    transition: 0.5s ease;
+}
+
+.card-list .card-item h2:hover{
+    text-shadow: 0 5px 25px rgba(255, 255, 255, 0.317);
+}
+
+.card-list .card-item .user-profession:hover{
+    text-shadow: 0 5px 25px rgba(255, 255, 255, 0.317);
+}
+
+
+.card-list .card-item  .message-button{
+    font-size: 1.25rem;
+    padding: 10px 35px;
+    color: #030728;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+}
+
+.card-list .card-item  .message-button:hover{
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+     box-shadow: 0 7px 25px rgba(255, 255, 255, 0.317);
+}
+
+.slider-wrapper .swiper-pagination-bullet{
+    background: #fff;
+    height: 15px;
+    width: 15px;
+}
+
+.slider-wrapper .swiper-slide-button{
+    color: #fff;
+    margin-top: -50px;
+    transition: 0.5s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover{
+    color: #4658ff;
+}
+
+@media (max-width: 768px){
+    .slider-wrapper{
+        margin: 0 10px 40px;
+    }
+
+    .slider-wrapper .swiper-slide-button{
+        display: none;
+    }
+}

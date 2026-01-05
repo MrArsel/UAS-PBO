@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Sistem Peminjaman</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Peminjaman.id</div>
+</nav>
+
+<!-- Content -->
+<section class="content form-page">
+    <h1>Sistem Peminjaman</h1>
+    <p>Silakan daftar untuk membuat akun</p>
+
+    <form method="post" class="form-box" style="width: 100%;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-save">Daftar</button>
+    </form>
+    <a href="/login/" class="btn-back form-back">← Kembali</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Primakara University</p>
+</footer>
+
+</body>
+</html>

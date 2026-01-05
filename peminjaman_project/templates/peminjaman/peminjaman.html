@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Peminjaman | Sistem Peminjaman Barang</title>
+    <link rel="icon" href="{% static 'img/prima.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Peminjaman.id</div>
+    <ul class="nav-menu">
+        <li class="user-info">
+            {{ request.user.username }}
+        </li>
+        <li>
+            <form method="post" action="{% url 'logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Keluar</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<!-- Content -->
+<section class="content">
+    <div class="content-header header-flex">
+        <div>
+            <h1>Daftar Peminjaman</h1>
+            <p>Data transaksi peminjaman barang</p>
+        </div>
+
+        <!-- Tombol Input -->
+        <a href="/peminjaman/tambah/" class="btn-add">Input Peminjaman</a>
+    </div>
+
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Peminjam</th>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Tanggal</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in data %}
+                <tr>
+                    <td align="center">{{ forloop.counter }}</td>
+                    <td>{{ p.nama_peminjam }}</td>
+                    <td>{{ p.barang.nama_barang }}</td>
+                    <td align="center">{{ p.jumlah }}</td>
+                    <td align="center">{{ p.tanggal_pinjam }}</td>
+                    <td align="center">
+                        <span class="status {{ p.status|lower }}">
+                            {{ p.status }}
+                        </span>
+                    </td>
+                    <td class="aksi">
+                        {% if p.status == 'Dipinjam' %}
+                            <a href="/peminjaman/kembalikan/{{ p.id }}/"
+                            class="btn-edit"
+                            onclick="return confirm('Kembalikan barang?')">
+                            Kembalikan
+                            </a>
+
+                        {% endif %}
+
+                        <a href="/peminjaman/edit/{{ p.id }}/" class="btn-edit">Edit</a>
+
+
+                        <form action="/peminjaman/hapus/{{ p.id }}/"
+                              method="POST"
+                              class="form-delete">
+                            {% csrf_token %}
+                            <button type="submit"
+                                    class="btn-delete"
+                                    onclick="return confirm('Yakin hapus data peminjaman?')">
+                                Hapus
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="empty">
+                        Belum ada data peminjaman
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/home/" class="btn-back">← Kembali ke Dashboard</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Primakara University</p>
+</footer>
+
+</body>
+</html>

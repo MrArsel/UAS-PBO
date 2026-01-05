@@ -1,0 +1,483 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+.user-info{
+    color: #fff;
+}
+.logout-btn{
+    padding: 3px 15px 3px 15px;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s ease;
+    border: none;
+}
+.logout-btn:hover{
+    background-color: rgb(182, 1, 1);
+    color: lightgray;
+}
+.daftar{
+    text-decoration:none; 
+    color:#000; 
+    font-weight:500;
+    transition: 0.5s ease;
+}
+.daftar:hover{
+    color: blue;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    padding: 15px 40px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-menu li a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),url(../img/backuas.gif);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #38bdf8;
+    color: #0f172a;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+    color: #fff;
+    box-shadow: #fff 0px 0px 10px 3px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e293b;
+    color: #cbd5f5;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    padding: 40px;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dashboard h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.subtitle {
+    color: #475569;
+    margin-bottom: 40px;
+}
+
+/* Card Layout */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #0f172a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Dashboard Number Badge */
+.card {
+    position: relative; 
+}
+
+.card-number {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 38px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card p {
+    color: #475569;
+    line-height: 1.5;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+
+/* Pie Chart Dashboard */
+/* Chart Layout Grid */
+.chart-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.chart-box {
+    width: 320px;
+    height: 300px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.chart-box h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.chart-box canvas {
+    width: 100% !important;
+    height: 220px !important;
+}
+
+
+
+
+/* barang */
+
+/* Content Layout */
+.content {
+    padding: 60px 40px;
+    background-color: #f8fafc;
+    flex: 1;
+}
+
+
+.form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.content-header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.content-header p {
+    color: #475569;
+    margin-bottom: 30px;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border-spacing: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+.styled-table thead {
+    background-color: #1e40af;
+    color: #ffffff;
+}
+
+.styled-table thead th {
+    padding: 16px 18px;
+    text-align: center;
+}
+
+.styled-table tbody td {
+    padding: 14px 18px;
+    vertical-align: middle;
+}
+
+.styled-table tbody tr:not(:last-child) {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.styled-table td:last-child {
+    font-weight: bold;
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    color: #64748b;
+    padding: 20px;
+}
+
+/* Back Button */
+.btn-back {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #1e40af;
+    font-weight: bold;
+        transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-back:hover {
+      transform: translateX(-4px);
+}
+
+/* Header with button */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add Button */
+.btn-add {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s ease;
+}
+
+.btn-add:hover {
+    background-color: #1e40af;
+}
+
+
+.btn-save {
+    margin-top: 25px;
+    width: 100%;
+
+    background-color: #2563eb;
+    color: #ffffff;
+
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn-save:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+}
+
+
+
+/* Aksi Button */
+.aksi {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+
+.btn-edit {
+    background-color: #f59e0b;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 14px;
+    transition: 0.5s ease;
+}
+
+.btn-edit:hover {
+    background-color: #d97706;
+}
+
+.btn-delete {
+    background-color: #dc2626;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    transition: 0.5s ease;
+    font-size: 14px;
+}
+.form-delete {
+    display: inline;
+}
+
+.btn-delete:hover {
+    background-color: #b91c1c;
+}
+
+
+/* tambah barang */
+
+/* Form */
+.form-box {
+    max-width: 400px;
+}
+
+.form-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    background-color: #f8fafc;
+
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-box input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+
+.form-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.form-back:hover {
+    transform: translateX(-4px);
+}
+
+.form-box select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-box select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
