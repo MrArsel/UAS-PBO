@@ -39,3 +39,9 @@ dengan tampilan sederhana dan mudah dipahami.
 
 ```bash
 python manage.py runserver
+
+Buka browser dan akses:
+
+```bash
+http://127.0.0.1:8000/
+
