@@ -44,3 +44,15 @@ python manage.py runserver
 ```bash
 http://127.0.0.1:8000/
 
+## Struktur Folder
+- peminjaman/ : aplikasi utama
+- peminjaman_project/ : konfigurasi project
+- templates/ : file tampilan HTML
+- static/ : file CSS dan asset pendukung
+- db.sqlite3 : database
+- manage.py : file utama untuk menjalankan project
+
+##Tujuan Pembuatan
+
+Project ini dibuat untuk memenuhi tugas mata kuliah serta sebagai latihan
+dalam memahami konsep dasar pengembangan web menggunakan Django.
