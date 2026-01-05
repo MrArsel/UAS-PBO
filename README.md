@@ -43,6 +43,7 @@ python manage.py runserver
 5. Buka browser dan akses:
 ```bash
 http://127.0.0.1:8000/
+```
 
 ## Struktur Folder
 - peminjaman/ : aplikasi utama
