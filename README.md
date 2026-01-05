@@ -43,10 +43,14 @@ cd peminjaman_project
 
 ```bash
 python -m venv venv
-# Windows
-venv\Scripts\activate
+```
 
-# Mac / Linux
+Windows
+```bash
+venv\Scripts\activate
+```
+Mac / Linux
+```bash
 source venv/bin/activate
 ```
 
