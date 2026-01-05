@@ -53,7 +53,7 @@ http://127.0.0.1:8000/
 - db.sqlite3 : database
 - manage.py : file utama untuk menjalankan project
 
-##Tujuan Pembuatan
+## Tujuan Pembuatan
 
 Project ini dibuat untuk memenuhi tugas mata kuliah serta sebagai latihan
 dalam memahami konsep dasar pengembangan web menggunakan Django.
