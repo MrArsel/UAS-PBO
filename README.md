@@ -32,15 +32,40 @@ dengan tampilan sederhana dan mudah dipahami.
 - CSS
 
 ## Cara Menjalankan Aplikasi
-1. Pastikan Python sudah terpasang di komputer
-2. Masuk ke folder project
-3. Aktifkan virtual environment (jika ada)
-4. Jalankan perintah berikut:
+1. Pastikan Python sudah terinstall (disarankan Python 3.9 atau lebih baru)
+2. Extract folder project, lalu masuk ke direktori yang terdapat file `manage.py`
+   
+```bash
+cd peminjaman_project
+```
+
+3. Buat dan aktifkan virtual environment
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+4. Install dependency
+
+```bash
+pip install -r requirements.txt
+```
+
+5. Jalankan migrate database
+
+```bash
+python manage.py migrate
+```
+
+6. Jalankan server
+
 ```bash
 python manage.py runserver
 ```
 
-5. Buka browser dan akses:
+7. Buka browser dan akses:
+
 ```bash
 http://127.0.0.1:8000/
 ```
