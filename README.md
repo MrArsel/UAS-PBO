@@ -36,12 +36,11 @@ dengan tampilan sederhana dan mudah dipahami.
 2. Masuk ke folder project
 3. Aktifkan virtual environment (jika ada)
 4. Jalankan perintah berikut:
-
 ```bash
 python manage.py runserver
+```
 
-Buka browser dan akses:
-
+5. Buka browser dan akses:
 ```bash
 http://127.0.0.1:8000/
 
